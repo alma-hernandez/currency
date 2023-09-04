@@ -6,7 +6,7 @@ const MainContent = () => {
         <div className="container main">
             <div className="row currentcurrency">
                 <div className="col">
-                    <input placeholder="Amount"></input>
+                    <input id = "amount" placeholder="Amount"></input>
                 </div>
                 <div className="col currentcurrency">
                     <select>
