@@ -1,11 +1,16 @@
+import React from 'react'; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
-import '//NavBar.js'
+import NavBar from './NavBar';
+import FirstLine from './title.js'
 
-function App() {
+const App = () => {
   return (
     <div>
-      <NavBar/>
+      <NavBar />
+      <div>
+        <FirstLine />
+      </div>
     </div>
   );
 }
