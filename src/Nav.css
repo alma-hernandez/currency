@@ -2,9 +2,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-}
-
-.nav-link {
+  font-size: 40px;
 }
 
 .custom-right-align {
