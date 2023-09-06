@@ -1,27 +1,30 @@
 import React from 'react'; 
 import "bootstrap/dist/css/bootstrap.min.css";
-import './App.css';
+import './Nav.css';
 import NavBar from './NavBar';
-import FirstLine from './title.js'
+import Doctitle from './Doctitle.js'
 import SecondLine from './SecondLine.js'
 import MainContent from './currencyone.js'
-import CurrenciesPopulated from './allCurrPopulated.js'
+import CurrencyConverter from './allCurrPopulated.js'
+
 
 const App = () => {
   return (
     <div>
       <NavBar />
       <div>
-        <FirstLine />
+        <Doctitle />
       </div>
       <div>
-        <SecondLine />
+  
       </div>
       <div>
-        <MainContent />
+   
       </div>
       <div>
-        <CurrenciesPopulated />
+        <CurrencyConverter />
+      </div>
+      <div>
       </div>
     </div>
   );

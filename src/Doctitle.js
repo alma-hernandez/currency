@@ -1,11 +1,11 @@
 import React from 'react';
 
-const FirstLine = () => {
+const Doctitle = () => {
   return (
-    <div class = "title">
+    <div class = "Doctitle">
       Alma's Awesome Currency Converter
     </div>
   );
 };
 
-export default FirstLine;
+export default Doctitle;
