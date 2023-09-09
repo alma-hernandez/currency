@@ -6,7 +6,9 @@ import Doctitle from './Doctitle.js'
 import CurrencyConverter from './allCurrPopulated.js';
 import { TwoCurrencyConverter } from './TwoCurrency';
 import { HashRouter, Route } from 'react-router-dom';
-import Footer from footer.js;
+import AppFooter from './footer.js';
+
+
 
 
 const App = () => {
@@ -33,7 +35,7 @@ const ActualApp = () => {
         {converter}
       </div>
       <footer>
-        <Footer />
+        <AppFooter />
       </footer>
     </>
   )

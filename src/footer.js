@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Footer() {
+function AppFooter() {
   return (
     <footer>
-      <a href='file:///C:/Code/hello-world/Portfolio/index.html'>Go to Portfolio</a>
+      <a href='https://alma-hernandez.github.io/portfolio/'>Go to Portfolio</a>
     </footer>
   );
 }
 
-export default Footer;
+export default AppFooter;
