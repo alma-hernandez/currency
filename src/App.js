@@ -5,16 +5,25 @@ import NavBar from './NavBar';
 import Doctitle from './Doctitle.js'
 import CurrencyConverter from './allCurrPopulated.js';
 import { TwoCurrencyConverter } from './TwoCurrency';
+import { HashRouter, Route } from 'react-router-dom';
 
 
 const App = () => {
-  const [route, setRoute] = useState("multi-currencies");
 
+  return (
+    <HashRouter basename="/currency">
+      <Route path="/" component={ActualApp} />
+    </HashRouter>
+  );
+}
+
+const ActualApp = () => {
+  const [route, setRoute] = useState("multi-currencies");
   const converter = route === "multi-currencies"
     ? < CurrencyConverter />
     : <TwoCurrencyConverter />;
   return (
-    <div>
+    <>
       <NavBar route={route} routeUpdated={setRoute} />
       <div>
         <Doctitle />
@@ -22,8 +31,8 @@ const App = () => {
       <div>
         {converter}
       </div>
-    </div>
-  );
+    </>
+  )
 }
 
 export default App;
