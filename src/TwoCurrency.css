@@ -1,0 +1,22 @@
+/* Add gridlines for rows and columns */
+.container {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.row {
+    display: table-row;
+}
+
+.col {
+    display: table-cell;
+    border: 1px solid #ccc; /* Add a 1px solid border to create gridlines */
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style the header row if needed */
+.row:first-child {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}

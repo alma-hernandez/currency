@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function CurrencyConverter() {
+const CurrencyConverter = () => {
     const [amount, setAmount] = useState(1);
     const [baseCurrency, setBaseCurrency] = useState('EUR');
     const [convertedCurrencies, setConvertedCurrencies] = useState({});
