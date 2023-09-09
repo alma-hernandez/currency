@@ -31,8 +31,8 @@ function CurrencyConverter() {
 
     return (
         <div className="allCurrencies">
-            <div>
-                <h1>Currency Converter</h1>
+            <h1>Currency Converter</h1>
+            <div className="mobile-container">
                 <div>
                     <label>
                         Amount:

@@ -34,9 +34,7 @@ const ActualApp = () => {
       <div>
         {converter}
       </div>
-      <footer>
         <AppFooter />
-      </footer>
     </>
   )
 }
