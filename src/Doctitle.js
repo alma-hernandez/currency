@@ -2,7 +2,7 @@ import React from 'react';
 
 const Doctitle = () => {
   return (
-    <div class = "Doctitle">
+    <div className= "Doctitle">
       Alma's Awesome Currency Converter
     </div>
   );

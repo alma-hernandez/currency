@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title } from 'chart.js';
+import 'chart.js/auto'; // ADD THIS
+ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title);
+
 
 
 function ConverterTwo() {
   const [amount, setAmount] = useState('');
+  const ref = useRef();
   const [fromCurrency, setFromCurrency] = useState('USD');
   const [toCurrency, setToCurrency] = useState('EUR');
-  const [result, setResult] = useState(null);
-  const [chartData, setChartData] = useState(null);
+  const [result, setResult] = useState(undefined);
+  const [chartData, setChartData] = useState(undefined);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
 
@@ -23,13 +28,13 @@ function ConverterTwo() {
       );
 
       const historicalRates = response.data.rates;
-
+      const values = Object.values(historicalRates).map(r => r[toCurrency]);
       setChartData({
         labels: Object.keys(historicalRates),
         datasets: [
           {
             label: `${fromCurrency} to ${toCurrency}`,
-            data: Object.values(historicalRates),
+            data: values,
             fill: false,
             borderColor: 'rgb(75, 192, 192)',
             tension: 0.1,
@@ -41,6 +46,17 @@ function ConverterTwo() {
     }
   };
 
+  const component = chartData !== undefined
+    ? <Line ref={ref} data={chartData} />
+    : <React.Fragment/>;
+
+  const resultComponent = result !== undefined
+    ? (
+      <p>
+        {amount} {fromCurrency} is equal to {result} {toCurrency}
+      </p>
+    )
+    : <React.Fragment/>;
 
   return (
     <div>
@@ -88,17 +104,8 @@ function ConverterTwo() {
         </div>
         <button type="submit">Convert</button>
       </form>
-      {result && (
-        <p>
-          {amount} {fromCurrency} is equal to {result} {toCurrency}
-        </p>
-      )}
-      {chartData && (
-        <div>
-          <h2>Exchange Rate Chart</h2>
-          <Line data={chartData} />
-        </div>
-      )}
+      {resultComponent}
+      {component}
     </div>
   );
 }
