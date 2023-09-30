@@ -90,16 +90,16 @@ function ConverterTwo() {
           <label>From Currency:</label>
           <input
             type="text"
-            value={fromCurrency.toUpperCase()}
-            onChange={(e) => setFromCurrency(e.target.value)}
+            value={fromCurrency}
+            onChange={(e) => setFromCurrency(e.target.value.toUpperCase())}
           />
         </div>
         <div>
           <label>To Currency:</label>
           <input
             type="text"
-            value={toCurrency.toUpperCase()}
-            onChange={(e) => setToCurrency(e.target.value)}
+            value={toCurrency}
+            onChange={(e) => setToCurrency(e.target.value.toUpperCase())}
           />
         </div>
         <button type="submit">Convert</button>
