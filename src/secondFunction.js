@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title } from 'chart.js';
-import 'chart.js/auto'; // ADD THIS
+import 'chart.js/auto'; 
 ChartJS.register(LineController, LineElement, PointElement, LinearScale, Title);
 
 
@@ -90,7 +90,7 @@ function ConverterTwo() {
           <label>From Currency:</label>
           <input
             type="text"
-            value={fromCurrency}
+            value={fromCurrency.toUpperCase()}
             onChange={(e) => setFromCurrency(e.target.value)}
           />
         </div>
@@ -98,7 +98,7 @@ function ConverterTwo() {
           <label>To Currency:</label>
           <input
             type="text"
-            value={toCurrency}
+            value={toCurrency.toUpperCase()}
             onChange={(e) => setToCurrency(e.target.value)}
           />
         </div>
