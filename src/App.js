@@ -30,8 +30,9 @@ const ActualApp = () => {
       <div>
         <Doctitle />
       </div>
-      <div><ConverterTwo /></div>
+      
       <div>{converter}</div>
+      
       <AppFooter />
     </>
   );
