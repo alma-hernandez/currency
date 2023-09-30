@@ -87,7 +87,7 @@ function ConverterTwo() {
           />
         </div>
         <div>
-          <label>From  Currency:</label>
+          <label>From Currency:</label>
           <input
             type="text"
             value={fromCurrency}
